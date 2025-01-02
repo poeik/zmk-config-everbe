@@ -20,8 +20,8 @@
 ---
 include:
   - board: nice_nano_v2
-    shield: caldera_left
+    shield: everbe_left
   - board: nice_nano_v2
-    shield: caldera_right
+    shield: everbe_right
   - board: nice_nano_v2
     shield: settings_reset
