@@ -2,6 +2,11 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+// Defines what key goes where
+// &kp = keypress
+// &mo = momentary layer, means it activates a specific layer when we hold down this key
+//    &mo 1 = selects into the next layer
+// &bt = selects a different bluetooth device
 / {
         keymap {
                 compatible = "zmk,keymap";

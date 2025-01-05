@@ -1,3 +1,10 @@
+# define the shield names
+# This sets two boolean properties (`SHIELD_EVERBE_LEFT` &
+# `SHIELD_EVERBE_RIGHT`) which become `true` (`y`) whenever the `shields_list`
+# contains `everbe_left` or `everber_right` respecively.
+#
+# This lets us make specific configurations for both keyboard parts.
+
 config SHIELD_EVERBE_LEFT
     def_bool $(shields_list_contains,everbe_left)
 

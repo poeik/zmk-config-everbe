@@ -4,6 +4,8 @@
     col-offset = <6>;
 };
 
+// these are the pins of the rows for the right half (should be the reverse of
+// the left)
 &kscan0 {
     col-gpios
         = <&pro_micro 2 GPIO_ACTIVE_HIGH>

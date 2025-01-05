@@ -1,5 +1,6 @@
 #include "everbe.dtsi"
 
+// these are the pins of the rows for the left half 
 &kscan0 {
     col-gpios
         = <&pro_micro 3 GPIO_ACTIVE_HIGH>

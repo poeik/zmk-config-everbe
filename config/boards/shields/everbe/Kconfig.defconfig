@@ -1,5 +1,10 @@
+# Set configuration properties for either halves of the keyboards
+
+# For the left halve:
+# Define the left halve as BLE central
 if SHIELD_EVERBE_LEFT
 
+# Name must be less than 16 characters long!
 config ZMK_KEYBOARD_NAME
     default "Everbe"
 
@@ -8,6 +13,8 @@ config ZMK_SPLIT_ROLE_CENTRAL
 
 endif
 
+# for both halves
+#
 if SHIELD_EVERBE_LEFT || SHIELD_EVERBE_RIGHT
 
 config ZMK_SPLIT
