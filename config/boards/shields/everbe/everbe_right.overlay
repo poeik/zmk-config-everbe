@@ -1,14 +1,16 @@
 #include "everbe.dtsi"
 
 &default_transform { 
-    col-offset = <6>;
+    col-offset = <8>;
 };
 
-// these are the pins of the rows for the right half (should be the reverse of
+// these are the pins of the cols for the right half (should be the reverse of
 // the left)
 &kscan0 {
     col-gpios
-        = <&pro_micro 2 GPIO_ACTIVE_HIGH>
+        = <&pro_micro 0 GPIO_ACTIVE_HIGH> // thumb 1
+        , <&pro_micro 1 GPIO_ACTIVE_HIGH> // thumb 2
+        , <&pro_micro 2 GPIO_ACTIVE_HIGH>
         , <&pro_micro 7 GPIO_ACTIVE_HIGH>
         , <&pro_micro 6 GPIO_ACTIVE_HIGH>
         , <&pro_micro 5 GPIO_ACTIVE_HIGH>
