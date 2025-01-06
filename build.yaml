@@ -20,8 +20,8 @@
 ---
 include:
   - board: nice_nano_v2
-    shield: everbe_left
+    shield: ergokey_left
   - board: nice_nano_v2
-    shield: everbe_right
+    shield: ergokey_right
   - board: nice_nano_v2
     shield: settings_reset

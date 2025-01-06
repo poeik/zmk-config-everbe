@@ -1,4 +1,4 @@
-#include "everbe.dtsi"
+#include "ergokey.dtsi"
 
 // these are the pins of the cols for the left half 
 &kscan0 {

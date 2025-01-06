@@ -1,4 +1,4 @@
-// Both halves use this file so the specific `everbe_*.overlay` need to import
+// Both halves use this file so the specific `ergokey*.overlay` need to import
 // it. 
 // It defines:
 // - kscan: which GPIO pins ZMK uses to listen to keyboard events

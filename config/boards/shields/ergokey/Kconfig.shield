@@ -1,0 +1,13 @@
+# define the shield names
+# This sets two boolean properties (`SHIELD_ERGOKEY_LEFT` &
+# `SHIELD_ERGOKEY_RIGHT`) which become `true` (`y`) whenever the `shields_list`
+# contains `ergokey_left` or `ergokeyr_right` respecively.
+#
+# This lets us make specific configurations for both keyboard parts.
+
+config SHIELD_ERGOKEY_LEFT
+    def_bool $(shields_list_contains,ergokey_left)
+
+config SHIELD_ERGOKEY_RIGHT
+    def_bool $(shields_list_contains,ergokey_right)
+
