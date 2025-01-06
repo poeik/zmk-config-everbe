@@ -16,7 +16,6 @@
 #     snippet: studio-rpc-usb-uart
 #     cmake-args: -DCONFIG_ZMK_STUDIO=y
 #     artifact-name: corne_left_with_studio
-#
 ---
 include:
   - board: nice_nano_v2
@@ -25,3 +24,13 @@ include:
     shield: everbe_right
   - board: nice_nano_v2
     shield: settings_reset
+    
+  # for debugging use instead the following:
+  # - board: nice_nano_v2
+  #   shield: everbe_left
+  #   snippet: zmk-usb-logging
+  # - board: nice_nano_v2
+  #   shield: everbe_right
+  #   snippet: zmk-usb-logging
+  # - board: nice_nano_v2
+  #   shield: settings_reset
