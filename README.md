@@ -13,3 +13,8 @@ For a description of the individual files please refer to
 4. choose `identify keyboard` -> `Custom` -> `Import from File`
 5. choose `everbe.json`
 
+
+## home row mods
+
+- see [documentation](https://zmk.dev/docs/keymaps/behaviors/hold-tap#hold-tap)
+  to different flavors
