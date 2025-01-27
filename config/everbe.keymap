@@ -9,6 +9,52 @@
 //    &mo 1 = selects into the next layer
 // &bt = selects a different bluetooth device
 / {
+    combos {
+        compatible = "zmk,combos";
+        l_combo_lalt {
+            timeout-ms = <50>;
+            key-positions = <14 28>;
+            bindings = <&kp LALT>;
+        };
+        l_combo_lgui{
+            timeout-ms = <50>;
+            key-positions = <15 29>;
+            bindings = <&kp LGUI>;
+        };
+        l_combo_lshift {
+            timeout-ms = <50>;
+            key-positions = <16 30>;
+            bindings = <&kp LSHIFT>;
+        };
+        l_combo_lctrl {
+            timeout-ms = <50>;
+            key-positions = <17 31>;
+            bindings = <&kp LCTRL>;
+        };
+
+        r_combo_rctrl {
+            timeout-ms = <50>;
+            key-positions = <20 34>;
+            bindings = <&kp RCTRL>;
+        };
+        r_combo_rshift{
+            timeout-ms = <50>;
+            key-positions = <21 35>;
+            bindings = <&kp RSHIFT>;
+        };
+        r_combo_rgui {
+            timeout-ms = <50>;
+            key-positions = <22 36>;
+            bindings = <&kp RGUI>;
+        };
+        r_combo_ralt {
+            timeout-ms = <50>;
+            key-positions = <23 37>;
+            bindings = <&kp RALT>;
+        };
+    };
+};
+/ {
     behaviors {
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
@@ -32,11 +78,11 @@
             // | CTRL | ALT | GUI | SPC | SPC | SPC |     | SPC | LOW |LARW |DARW |UARW | RARW |
 
             bindings = <
-           &kp ESC    &kp N1        &kp N2          &kp N3           &kp N4             &kp N5                &kp N6           &kp N7          &kp N8              &kp N9              &kp N0         &kp CH_QUOT
-&kp A      &kp TAB    &hm LALT Q    &hm LSHIFT W    &hm LCTRL E      &hm LGUI R         &kp T                 &kp CH_Z         &hm RGUI U      &hm RCTRL I         &hm RSHIFT O        &hm RALT P     &kp CH_GRV   &kp BSPC
-&kp A      &kp LCTRL  &kp A         &kp S           &kp D            &kp F              &kp G                 &kp H            &kp J           &kp K               &kp L               &kp CH_DIAE    &kp CH_DLR   &kp ENTER
-&kp LSHFT  &kp LSHFT  &kp CH_Y      &kp X           &kp C            &kp V              &kp B                 &kp N            &kp M           &kp COMMA           &kp DOT             &kp CH_MINS    &kp CH_CIRC  &kp RSHIFT
-           &kp LCTRL  &kp LALT      &kp LGUI                         &kp SPACE          &kp LEFT_SHIFT        &kp RIGHT_SHIFT  &mo 1                               &kp RGUI            &kp RALT       &kp RCTRL
+           &kp ESC    &kp N1        &kp N2          &kp N3           &kp N4             &kp N5                        &kp N6           &kp N7          &kp N8              &kp N9              &kp N0         &kp CH_QUOT
+&kp A      &kp TAB    &hm LALT Q    &hm LSHIFT W    &hm LCTRL E      &hm LGUI R         &kp T                         &kp CH_Z         &hm RGUI U      &hm RCTRL I         &hm RSHIFT O        &hm RALT P     &kp CH_GRV   &kp BSPC
+&kp A      &kp LCTRL  &kp A         &kp S           &kp D            &kp F              &kp G                         &kp H            &kp J           &kp K               &kp L               &kp CH_DIAE    &kp CH_DLR   &kp ENTER
+&kp LSHFT  &kp LSHFT  &kp CH_Y      &kp X           &kp C            &kp V              &kp B                         &kp N            &kp M           &kp COMMA           &kp DOT             &kp CH_MINS    &kp CH_CIRC  &kp RSHIFT
+           &kp LCTRL  &kp LALT      &kp LGUI                         &kp SPACE          &kp LEFT_SHIFT                &kp RIGHT_SHIFT  &mo 1                               &kp RGUI            &kp RALT       &kp RCTRL
             >;
         };
 
