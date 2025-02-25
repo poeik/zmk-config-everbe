@@ -11,20 +11,15 @@
 / {
     combos {
         compatible = "zmk,combos";
-        l_combo_lalt {
-            timeout-ms = <50>;
-            key-positions = <14 28>;
-            bindings = <&kp LALT>;
-        };
-        l_combo_lgui{
+        l_combo_lalt{
             timeout-ms = <50>;
             key-positions = <15 29>;
-            bindings = <&kp LGUI>;
+            bindings = <&kp LALT>;
         };
-        l_combo_lshift {
+        l_combo_lgui {
             timeout-ms = <50>;
             key-positions = <16 30>;
-            bindings = <&kp LSHIFT>;
+            bindings = <&kp LGUI>;
         };
         l_combo_lctrl {
             timeout-ms = <50>;
@@ -37,25 +32,31 @@
             key-positions = <20 34>;
             bindings = <&kp RCTRL>;
         };
-        r_combo_rshift{
+        r_combo_rgui{
             timeout-ms = <50>;
             key-positions = <21 35>;
-            bindings = <&kp RSHIFT>;
-        };
-        r_combo_rgui {
-            timeout-ms = <50>;
-            key-positions = <22 36>;
             bindings = <&kp RGUI>;
         };
         r_combo_ralt {
             timeout-ms = <50>;
-            key-positions = <23 37>;
+            key-positions = <22 36>;
             bindings = <&kp RALT>;
         };
     };
 };
 / {
-    keymap {
+      behaviors {
+          hm: mod_taps {
+              compatible = "zmk,behavior-hold-tap";
+              #binding-cells = <2>;
+              tapping-term-ms = <175>;
+              quick-tap-ms = <0>;
+              flavor = "tap-preferred";
+              bindings = <&kp>, <&kp>;               
+          };
+      };                                               
+
+      keymap {
         compatible = "zmk,keymap";
 
         default_layer {
@@ -69,9 +70,9 @@
             bindings = <
            &kp ESC    &kp N1        &kp N2          &kp N3           &kp N4             &kp N5                        &kp N6           &kp N7          &kp N8              &kp N9              &kp N0         &kp CH_QUOT
 &kp A      &kp TAB    &kp Q         &kp W           &kp E            &kp R              &kp T                         &kp CH_Z         &kp U           &kp I               &kp O               &kp P          &kp CH_GRV   &kp BSPC
-&kp A      &kp LCTRL  &kp A         &kp S           &kp D            &kp F              &kp G                         &kp H            &kp J           &kp K               &kp L               &kp CH_DIAE    &kp CH_DLR   &kp ENTER
+&kp A      &kp ESC    &kp A         &kp S           &kp D            &kp F              &kp G                         &kp H            &kp J           &kp K               &kp L               &kp CH_DIAE    &kp CH_DLR   &kp ENTER
 &kp LSHFT  &kp LSHFT  &kp CH_Y      &kp X           &kp C            &kp V              &kp B                         &kp N            &kp M           &kp COMMA           &kp DOT             &kp CH_MINS    &kp CH_CIRC  &kp RSHIFT
-           &kp LCTRL  &kp LALT      &kp LGUI                         &kp SPACE          &kp LEFT_SHIFT                &kp RIGHT_SHIFT  &mo 1                               &kp RGUI            &kp RALT       &kp RCTRL
+           &kp LCTRL  &kp LALT      &kp LGUI                         &hm LSHIFT SPACE   &kp BSPC                      &mo 1            &hm RSHIFT ENTER
             >;
         };
 
@@ -87,4 +88,3 @@
     };
 };
 
-// &bt BT_SEL 1  &kp trans  &kp CH_LPRN  &kp CH_RPRN  &kp CH_RBRC  &kp CH_LCBR  &kp CH_RCBR  &kp LEFT  &kp DOWN_ARROW  &kp UP  &kp RIGHT  &trans  &trans          &trans
