@@ -49,7 +49,7 @@
 #define CH_9    N9    // 9
 #define CH_0    N0    // 0
 #define CH_QUOT MINUS // '
-#define CH_CIRC GRAVE // ^ (dead)
+#define CH_CIRC EQUAL // ^ (dead)
 // Row 2
 #define CH_Q    Q    // Q
 #define CH_W    W    // W
