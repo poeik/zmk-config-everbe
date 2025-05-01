@@ -23,3 +23,9 @@
 #define CH_RBRC LA(N6)      // ]
 #define CH_LCBR LA(N8)      // {
 #define CH_RCBR LA(N9)      // }
+
+#define CH_SLSH LS(N7)      // /
+#define CH_BSLS LA(N7)      // backslash
+#define CH_PIPE LS(RA(N7))  // |
+#define CH_HASH LA(N3)      // #
+#define CH_EQ   LS(N0)      // =
