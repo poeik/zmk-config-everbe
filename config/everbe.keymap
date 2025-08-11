@@ -51,7 +51,7 @@
               #binding-cells = <2>;
               tapping-term-ms = <175>;
               quick-tap-ms = <0>;
-              flavor = "balanced";
+              flavor = "tap-preferred";
               bindings = <&kp>, <&kp>;               
           };
           mk: mom_key {
@@ -73,7 +73,16 @@
 &none  &none      &kp Q    &kp W  &kp E  &kp R             &kp T                   &kp CH_Z    &kp U            &kp I     &kp O   &kp P       &kp CH_CIRC &none
 &none  &kp ESC    &kp A    &kp S  &kp D  &kp F             &kp G                   &kp H       &kp J            &kp K     &kp L   &kp CH_DIAE &kp CH_DLR  &none
 &none  &kp LSHIFT &kp CH_Y &kp X  &kp C  &kp V             &kp B                   &kp N       &kp M            &kp COMMA &kp DOT &kp CH_MINS &kp RSHIFT  &none
-       &none      &none    &none         &kp SPACE         &mk 2 TAB               &mk 1 BSPC  &kp ENTER                  &none   &none       &none
+       &none      &none    &none         &kp SPACE         &mk 3 TAB               &mk 2 BSPC  &kp ENTER                  &none   &none       &none
+            >;
+        };
+        default_experimental_layer {
+            bindings = <
+       &none      &kp N1   &kp N2      &kp N3      &kp N4            &kp N5                  &kp N6      &kp N7           &kp N8         &kp N9       &kp N0      &kp CH_QUOT
+&none  &none      &kp Q    &kp W       &kp E       &kp R             &kp T                   &kp CH_Z    &kp U            &kp I          &kp O        &kp P       &kp CH_CIRC &none
+&none  &kp ESC    &kp A    &kp S       &kp D       &kp F             &kp G                   &kp H       &kp J            &kp K          &kp L        &kp CH_DIAE &kp CH_DLR  &none
+&none  &kp LSHIFT &kp CH_Y &hm LALT X  &hm LGUI C  &hm LCTRL V       &kp B                   &kp N       &hm RCTRL M      &hm RGUI COMMA &hm RALT DOT &kp CH_MINS &kp RSHIFT  &none
+       &none      &none    &none                   &kp SPACE         &mk 3 TAB               &mk 2 BSPC  &kp ENTER                       &none        &none       &none
             >;
         };
 
@@ -83,7 +92,7 @@
 &bt BT_SEL 0 &trans &trans &kp F7 &kp F8 &kp F9 &kp F10                         &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT   &kp C_PP   &trans         &trans
 &bt BT_SEL 1 &trans &trans &kp F4 &kp F5 &kp F6 &trans                          &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT    &kp C_MUTE &trans         &trans
 &bt BT_SEL 2 &trans &trans &kp F1 &kp F2 &kp F3 &trans                          &trans     &trans       &trans       &trans       &trans     &trans         &trans
-             &trans &trans &trans        &trans &kp BSPC                        &trans     &trans                    &trans       &trans     &trans
+             &trans &trans &trans        &trans &kp BSPC                        &trans     &tog 1                    &trans       &trans     &trans
             >;
         };
         upper_layer {
