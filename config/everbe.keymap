@@ -78,28 +78,28 @@
         };
         default_experimental_layer {
             bindings = <
-       &none      &kp N1   &kp N2 &kp N3 &kp N4            &kp N5                  &kp N6      &kp N7           &kp N8    &kp N9  &kp N0      &kp CH_QUOT
-&none  &none      &kp Q    &kp W  &kp E  &kp R             &kp T                   &kp CH_Z    &kp U            &kp I     &kp O   &kp P       &kp CH_CIRC &none
-&none  &kp ESC    &kp A    &kp S  &kp D  &kp F             &kp G                   &kp H       &kp J            &kp K     &kp L   &kp CH_DIAE &kp CH_DLR  &none
-&none  &kp LSHIFT &kp CH_Y &kp X  &kp C  &kp V             &kp B                   &kp N       &kp M            &kp COMMA &kp DOT &kp CH_MINS &kp RSHIFT  &none
-       &none      &none    &none         &kp SPACE         &mk 3 TAB               &mk 2 BSPC  &kp ENTER                  &none   &none       &none
+       &none      &kp N1   &kp N2      &kp N3      &kp N4            &kp N5        &kp N6      &kp N7           &kp N8         &kp N9      &kp N0      &kp CH_QUOT
+&none  &none      &kp Q    &kp W       &kp E       &kp R             &kp T         &kp CH_Z    &kp U            &kp I          &kp O       &kp P       &kp CH_CIRC &none
+&none  &kp ESC    &kp A    &hm LALT S  &hm LGUI D  &hm LCTRL F       &kp G         &kp H       &hm RCTRL J      &hm RGUI K     &hm RALT L  &kp CH_DIAE &kp CH_DLR  &none
+&none  &kp LSHIFT &kp CH_Y &kp X       &kp C       &kp V             &kp B         &kp N       &kp M            &kp COMMA      &kp DOT     &kp CH_MINS &kp RSHIFT  &none
+       &none      &none    &none                   &kp SPACE         &mk 3 TAB     &mk 2 BSPC  &kp ENTER                       &none       &none       &none
             >;
         };
 
         lower_layer {
             bindings = <
-             &trans &trans &trans      &trans      &trans       &trans             &trans     &trans       &trans       &trans       &trans     &bt BT_CLR_ALL
-&bt BT_SEL 0 &trans &trans &kp F7      &kp F8      &kp F9       &kp F10            &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT   &kp C_PP   &trans         &trans
-&bt BT_SEL 1 &trans &trans &kp F4      &kp F5      &kp F6       &trans             &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT    &kp C_MUTE &trans         &trans
-&bt BT_SEL 2 &trans &trans &hm LALT F1 &hm LGUI F2 &hm LCTRL F3 &trans             &trans     &hm RCTRL F1 &hm RGUI F2  &hm RCTRL F3 &trans     &trans         &trans
-             &trans &trans &trans                  &trans       &kp BSPC           &trans     &tog 1                    &trans       &trans     &trans
+             &trans &trans &trans      &trans      &trans       &trans             &trans     &trans          &trans       &trans           &trans     &bt BT_CLR_ALL
+&bt BT_SEL 0 &trans &trans &kp F7      &kp F8      &kp F9       &kp F10            &kp C_PREV &kp C_VOL_DN    &kp C_VOL_UP &kp C_NEXT       &kp C_PP   &trans  &trans
+&bt BT_SEL 1 &trans &trans &hm LALT F4 &hm LGUI F5 &hm LCTRL F6 &trans             &kp LEFT   &hm RCTRL DOWN  &hm RGUI UP  &hm RCTRL RIGHT  &kp C_MUTE &trans  &trans
+&bt BT_SEL 2 &trans &trans &hm LALT F1 &hm LGUI F2 &hm LCTRL F3 &trans             &trans     &hm RCTRL F1    &hm RGUI F2  &hm RCTRL F3     &trans     &trans   &trans
+             &trans &trans &trans                  &trans       &kp BSPC           &trans     &tog 1                       &trans           &trans     &trans
             >;
         };
         upper_layer {
             bindings = <
         &trans &trans &trans      &trans      &trans       &trans                  &trans      &trans            &trans           &trans           &trans      &trans
 &trans  &trans &trans &kp N7      &kp N8      &kp N9       &kp N0                  &kp CH_SLSH &kp CH_LBRC       &kp CH_RBRC      &kp CH_EQ        &trans      &trans &trans
-&trans  &trans &trans &kp N4      &kp N5      &kp N6       &trans                  &kp CH_PIPE &kp CH_LPRN       &kp CH_RPRN      &kp CH_LABK      &kp CH_RABK &trans &trans
+&trans  &trans &trans &hm LALT N4 &hm LGUI N5 &hm LCTRL N6 &trans                  &kp CH_PIPE &hm RCTRL CH_LPRN &hm RGUI CH_RPRN &hm RALT CH_LABK &kp CH_RABK &trans &trans
 &trans  &trans &trans &hm LALT N1 &hm LGUI N2 &hm LCTRL N3 &trans                  &kp CH_BSLS &hm RCTRL CH_LCBR &hm RGUI CH_RCBR &hm RALT CH_HASH &trans      &trans &trans
         &trans &trans &trans                  &trans       &trans                  &kp BSPC    &trans                             &trans           &trans      &trans
             >;
