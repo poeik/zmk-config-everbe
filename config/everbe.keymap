@@ -88,11 +88,11 @@
 
         lower_layer {
             bindings = <
-             &trans &trans &trans      &trans      &trans       &trans             &trans     &trans          &trans       &trans           &trans     &bt BT_CLR_ALL
-&bt BT_SEL 0 &trans &trans &kp F7      &kp F8      &kp F9       &kp F10            &kp C_PREV &kp C_VOL_DN    &kp C_VOL_UP &kp C_NEXT       &kp C_PP   &trans  &trans
-&bt BT_SEL 1 &trans &trans &kp F4      &kp F5      &kp F6       &trans             &kp LEFT   &kp DOWN        &kp UP       &kp RIGHT        &kp C_MUTE &trans  &trans
-&bt BT_SEL 2 &trans &trans &hm LALT F1 &hm LGUI F2 &hm LCTRL F3 &trans             &trans     &hm RCTRL F1    &hm RGUI F2  &hm RCTRL F3     &trans     &trans   &trans
-             &trans &trans &trans                  &trans       &kp BSPC           &trans     &tog 1                       &trans           &trans     &trans
+       &trans       &trans &trans      &trans      &trans       &trans             &trans     &trans          &trans       &trans           &trans     &bt BT_CLR_ALL
+&trans &bt BT_SEL 0 &trans &kp F7      &kp F8      &kp F9       &kp F10            &kp C_PREV &kp C_VOL_DN    &kp C_VOL_UP &kp C_NEXT       &kp C_PP   &trans  &trans
+&trans &bt BT_SEL 1 &trans &kp F4      &kp F5      &kp F6       &trans             &kp LEFT   &kp DOWN        &kp UP       &kp RIGHT        &kp C_MUTE &trans  &trans
+&trans &bt BT_SEL 2 &trans &hm LALT F1 &hm LGUI F2 &hm LCTRL F3 &trans             &trans     &hm RCTRL F1    &hm RGUI F2  &hm RCTRL F3     &trans     &trans   &trans
+       &trans       &trans &trans                  &trans       &kp BSPC           &trans     &tog 1                       &trans           &trans     &trans
             >;
         };
         upper_layer {
