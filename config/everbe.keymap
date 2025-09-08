@@ -54,6 +54,14 @@
               flavor = "tap-preferred";
               bindings = <&kp>, <&kp>;               
           };
+          fm: mod_taps2 { // fast homerow mods
+              compatible = "zmk,behavior-hold-tap";
+              #binding-cells = <2>;
+              tapping-term-ms = <125>;
+              quick-tap-ms = <0>;
+              flavor = "tap-preferred";
+              bindings = <&kp>, <&kp>;               
+          };
           mk: mom_key {
               compatible = "zmk,behavior-hold-tap";
               #binding-cells = <2>;
@@ -78,11 +86,11 @@
         };
         default_experimental_layer {
             bindings = <
-       &none      &kp N1   &kp N2      &kp N3      &kp N4            &kp N5        &kp N6      &kp N7           &kp N8         &kp N9      &kp N0      &kp CH_QUOT
-&none  &none      &kp Q    &kp W       &kp E       &kp R             &kp T         &kp CH_Z    &kp U            &kp I          &kp O       &kp P       &kp CH_CIRC &none
-&none  &kp ESC    &kp A    &hm LALT S  &hm LGUI D  &hm LCTRL F       &kp G         &kp H       &hm RCTRL J      &hm RGUI K     &hm RALT L  &kp CH_DIAE &kp CH_DLR  &none
-&none  &kp LSHIFT &kp CH_Y &kp X       &kp C       &kp V             &kp B         &kp N       &kp M            &kp COMMA      &kp DOT     &kp CH_MINS &kp RSHIFT  &none
-       &none      &none    &none                   &kp SPACE         &mk 3 TAB     &mk 2 BSPC  &kp ENTER                       &none       &none       &none
+       &none      &kp N1   &kp N2      &kp N3      &kp N4            &kp N5        &kp N6      &kp N7           &kp N8         &kp N9       &kp N0      &kp CH_QUOT
+&none  &none      &kp Q    &kp W       &kp E       &kp R             &kp T         &kp CH_Z    &kp U            &kp I          &kp O        &kp P       &kp CH_CIRC &none
+&none  &kp ESC    &kp A    &kp S       &kp D       &kp F             &kp G         &kp H       &kp J            &kp K          &kp L        &kp CH_DIAE &kp CH_DLR  &none
+&none  &kp LSHIFT &kp CH_Y &fm LALT X  &fm LGUI C  &fm LCTRL V       &kp B         &kp N       &fm RCTRL M      &fm RGUI COMMA &fm RALT DOT &kp CH_MINS &kp RSHIFT  &none
+       &none      &none    &none                   &kp SPACE         &mk 3 TAB     &mk 2 BSPC  &kp ENTER                       &none        &none       &none
             >;
         };
 
