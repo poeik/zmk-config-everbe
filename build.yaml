@@ -18,11 +18,11 @@
 #     artifact-name: corne_left_with_studio
 ---
 include:
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: everbe_left
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: everbe_right
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: settings_reset
     
   # for debugging use instead the following:
