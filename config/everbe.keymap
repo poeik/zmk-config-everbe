@@ -106,7 +106,7 @@
         upper_layer {
             bindings = <
         &trans &trans &trans  &trans      &trans &trans                           &trans      &trans            &trans           &trans           &trans      &trans
-&trans  &trans &trans &kp N7  &kp N8      &kp N9 &kp N0                           &kp CH_SLSH &kp CH_LBRC       &kp CH_RBRC      &kp CH_EQ        &trans      &trans &trans
+&trans  &trans &trans &kp N7  &kp N8      &kp N9 &kp N0                           &kp CH_SLSH &kp CH_LBRC       &kp CH_RBRC      &kp CH_EQ        &kp CH_CIRC &trans &trans
 &trans  &trans &trans &kp N4  &kp N5      &kp N6 &trans                           &kp CH_PIPE &kp CH_LPRN       &kp CH_RPRN      &kp CH_LABK      &kp CH_RABK &trans &trans
 &trans  &trans &trans &kp N1  &kp N2      &kp N3 &trans                           &kp CH_BSLS &hm RCTRL CH_LCBR &hm RGUI CH_RCBR &hm RALT CH_HASH &trans      &trans &trans
         &trans &trans &trans              &trans &trans                           &kp BSPC    &trans                             &trans           &trans      &trans
