@@ -13,4 +13,18 @@ config ZMK_OS_LAYER_WIN_LAYER
     int "Layer id of the Windows marker layer (must match WIN in the keymap)"
     default 3
 
+config ZMK_OS_LAYER_AUTO_SWITCH
+    bool "Switch to a bonded host that connects while the active host is not connected"
+    default y
+
+config ZMK_OS_LAYER_AUTO_SWITCH_DELAY_S
+    int "Seconds to wait for the active host before switching to another connected host"
+    default 5
+    depends on ZMK_OS_LAYER_AUTO_SWITCH
+
+config ZMK_OS_LAYER_AUTO_SWITCH_BOOT_GRACE_S
+    int "No auto-switch within this many seconds after boot/wake"
+    default 20
+    depends on ZMK_OS_LAYER_AUTO_SWITCH
+
 endif
