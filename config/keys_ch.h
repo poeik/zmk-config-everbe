@@ -35,3 +35,16 @@
 #define CH_SHOT_FULL LS(LG(N3)) // whole screen
 #define CH_SHOT_AREA LS(LG(N4)) // selection
 
+// Windows Swiss German (AltGr = RALT) where it differs from macOS.
+// Everything not listed here is identical on both systems.
+#define CHW_LBRC RA(LBKT)   // [  (AltGr+ü)
+#define CHW_RBRC RA(RBKT)   // ]  (AltGr+¨)
+#define CHW_LCBR RA(SQT)    // {  (AltGr+ä)
+#define CHW_RCBR RA(NUHS)   // }  (AltGr+$)
+#define CHW_BSLS RA(NUBS)   // backslash (AltGr+<)
+#define CHW_PIPE RA(N7)     // |  (AltGr+7)
+#define CHW_LABK NUBS       // <
+#define CHW_RABK LS(NUBS)   // >
+#define CHW_HASH RA(N3)     // #  (AltGr+3)
+#define CHW_SHOT_FULL PSCRN      // whole screen
+#define CHW_SHOT_AREA LS(LG(S))  // Snipping Tool selection
