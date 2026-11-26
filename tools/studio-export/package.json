@@ -1,0 +1,11 @@
+{
+  "name": "studio-export",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "export": "node --import ./resolve-js.mjs export.mjs"
+  },
+  "dependencies": {
+    "@zmkfirmware/zmk-studio-ts-client": "0.0.18"
+  }
+}
