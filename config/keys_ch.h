@@ -15,7 +15,7 @@
 #define CH_DIAE RBKT        // ¨ (dead)
 #define CH_DLR  NUHS        // $
 #define CH_MINS FSLH        // -
-#define CH_LABK GRAVE       // <
+#define CH_LABK GRAVE       // <  
 #define CH_RABK LS(CH_LABK) // >
 #define CH_LPRN LS(N8)      // (
 #define CH_RPRN LS(N9)      // )
@@ -29,3 +29,9 @@
 #define CH_PIPE LA(N7)      // |
 #define CH_HASH LA(N3)      // #
 #define CH_EQ   LS(N0)      // =
+#define CH_AMPS LS(N6)      // &
+
+// macOS: screenshots
+#define CH_SHOT_FULL LS(LG(N3)) // whole screen
+#define CH_SHOT_AREA LS(LG(N4)) // selection
+
