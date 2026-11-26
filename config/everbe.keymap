@@ -70,6 +70,18 @@
               flavor = "tap-preferred";
               bindings = <&kp>, <&kp>;               
           };
+          // Windows: left Ctrl + number -> Win + number.
+          // Used on the Upper numpad. Only left Ctrl (Esc-key hold) triggers it, so
+          // right Ctrl (combo) + number still sends Ctrl+number.
+#define WIN_NUM(label, key)                                   \
+          label: label {                                      \
+              compatible = "zmk,behavior-mod-morph";          \
+              #binding-cells = <0>;                           \
+              bindings = <&kp key>, <&kp LG(key)>;            \
+              mods = <(MOD_LCTL)>;                            \
+          };
+          WIN_NUM(wn1, N1) WIN_NUM(wn2, N2) WIN_NUM(wn3, N3) WIN_NUM(wn4, N4) WIN_NUM(wn5, N5)
+          WIN_NUM(wn6, N6) WIN_NUM(wn7, N7) WIN_NUM(wn8, N8) WIN_NUM(wn9, N9) WIN_NUM(wn0, N0)
           mk: mom_key {
               compatible = "zmk,behavior-hold-tap";
               #binding-cells = <2>;
@@ -78,7 +90,7 @@
               flavor = "balanced";
               bindings = <&mo>, <&kp>;               
           };
-      };                                               
+      };
 
       keymap {
         compatible = "zmk,keymap";
@@ -114,8 +126,9 @@
             >;
         };
 
-        // Marker layer, all transparent. Switched on by src/os_layer.c while the
-        // Windows BLE profile is active. Its id must match CONFIG_ZMK_OS_LAYER_WIN_LAYER.
+        // Switched on by src/os_layer.c while the Windows BLE profile is active.
+        // Its id must match CONFIG_ZMK_OS_LAYER_WIN_LAYER.
+        // All transparent: it only marks "host is Windows" for the conditional layers.
         win_layer {
             display-name = "Win";
             bindings = <
@@ -137,14 +150,15 @@
         &trans &trans &trans        &trans &trans    &trans &trans        &trans &trans &trans
             >;
         };
-        // Active while Win + Upper: AltGr symbols of the Windows Swiss German layout.
+        // Active while Win + Upper: AltGr symbols of the Windows Swiss German layout,
+        // and numpad with Ctrl+<num> -> Win+<num> (activate taskbar app).
         upper_win_layer {
             display-name = "Upper Win";
             bindings = <
         &trans &trans &trans &trans &trans &trans                &trans        &trans        &trans        &trans        &trans &trans
-&trans  &trans &trans &trans &trans &trans &trans                &trans        &kp CHW_LBRC  &kp CHW_RBRC  &trans        &trans &trans &trans
-&trans  &trans &trans &trans &trans &trans &kp CHW_SHOT_AREA     &kp CHW_PIPE  &trans        &trans        &kp CHW_LABK  &kp CHW_RABK &trans &trans
-&trans  &trans &trans &trans &trans &trans &kp CHW_SHOT_FULL     &kp CHW_BSLS  &kp CHW_LCBR  &kp CHW_RCBR  &kp CHW_HASH  &trans &trans &trans
+&trans  &trans &trans &wn7   &wn8   &wn9   &wn0                  &trans        &kp CHW_LBRC  &kp CHW_RBRC  &trans        &trans &trans &trans
+&trans  &trans &trans &wn4   &wn5   &wn6   &kp CHW_SHOT_AREA     &kp CHW_PIPE  &trans        &trans        &kp CHW_LABK  &kp CHW_RABK &trans &trans
+&trans  &trans &trans &wn1   &wn2   &wn3   &kp CHW_SHOT_FULL     &kp CHW_BSLS  &kp CHW_LCBR  &kp CHW_RCBR  &kp CHW_HASH  &trans &trans &trans
         &trans &trans &trans        &trans &trans                &trans        &trans                      &trans        &trans &trans
             >;
         };
