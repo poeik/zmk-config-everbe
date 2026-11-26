@@ -1,0 +1,16 @@
+config ZMK_OS_LAYER
+    bool "Activate an OS layer depending on the selected output (BLE profile)"
+    default y
+    depends on ZMK_BLE && (!ZMK_SPLIT || ZMK_SPLIT_ROLE_CENTRAL)
+
+if ZMK_OS_LAYER
+
+config ZMK_OS_LAYER_WIN_PROFILE
+    int "BLE profile index (0-based, as in &bt BT_SEL n) used for Windows"
+    default 1
+
+config ZMK_OS_LAYER_WIN_LAYER
+    int "Layer id of the Windows marker layer (must match WIN in the keymap)"
+    default 3
+
+endif
