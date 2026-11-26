@@ -3,6 +3,14 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
+// Layer ids. WIN must match CONFIG_ZMK_OS_LAYER_WIN_LAYER (Kconfig).
+#define BASE      0
+#define LOWER     1
+#define UPPER     2
+#define WIN       3
+#define LOWER_WIN 4
+#define UPPER_WIN 5
+
 // Defines what key goes where
 // &kp = keypress
 // &mo = momentary layer, means it activates a specific layer when we hold down this key
@@ -82,7 +90,7 @@
 &none  &kp TAB          &kp Q    &kp W       &kp E       &kp R       &kp T         &kp CH_Z    &kp U       &kp I       &kp O        &kp P       &kp BSPC    &none
 &none  &hm LCTRL ESC    &kp A    &kp S       &kp D       &kp F       &kp G         &kp H       &kp J       &kp K       &kp L        &kp CH_DIAE &kp CH_DLR  &none
 &none  &kp LSHIFT       &kp CH_Y &kp X       &kp C       &kp V       &kp B         &kp N       &kp M       &kp COMMA   &kp DOT      &kp CH_MINS &kp RSHIFT  &none
-       &none            &none    &none                   &mk 2 ENTER &kp LGUI      &kp LALT    &mk 1 SPACE             &none        &none       &none
+       &none            &none    &none                   &mk UPPER ENTER &kp LGUI  &kp LALT    &mk LOWER SPACE         &none        &none       &none
             >;
         };
         lower_layer {
@@ -105,11 +113,59 @@
         &none  &none  &none               &kp ENTER &kp LGUI                      &kp RALT    &kp SPACE                   &none        &none       &none
             >;
         };
+
+        // Marker layer, all transparent. Switched on by src/os_layer.c while the
+        // Windows BLE profile is active. Its id must match CONFIG_ZMK_OS_LAYER_WIN_LAYER.
+        win_layer {
+            display-name = "Win";
+            bindings = <
+        &trans &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans &trans
+&trans  &trans &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans &trans &trans
+&trans  &trans &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans &trans &trans
+&trans  &trans &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans &trans &trans
+        &trans &trans &trans        &trans &trans    &trans &trans        &trans &trans &trans
+            >;
+        };
+        // Active while Win + Lower: only the keys that differ on Windows.
+        lower_win_layer {
+            display-name = "Lower Win";
+            bindings = <
+        &trans &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans &trans
+&trans  &trans &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans &trans &trans
+&trans  &trans &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans &trans &trans
+&trans  &trans &trans &trans &trans &trans &trans    &kp CHW_SHOT_FULL &kp CHW_SHOT_AREA &trans &trans &trans &trans &trans
+        &trans &trans &trans        &trans &trans    &trans &trans        &trans &trans &trans
+            >;
+        };
+        // Active while Win + Upper: AltGr symbols of the Windows Swiss German layout.
+        upper_win_layer {
+            display-name = "Upper Win";
+            bindings = <
+        &trans &trans &trans &trans &trans &trans                &trans        &trans        &trans        &trans        &trans &trans
+&trans  &trans &trans &trans &trans &trans &trans                &trans        &kp CHW_LBRC  &kp CHW_RBRC  &trans        &trans &trans &trans
+&trans  &trans &trans &trans &trans &trans &kp CHW_SHOT_AREA     &kp CHW_PIPE  &trans        &trans        &kp CHW_LABK  &kp CHW_RABK &trans &trans
+&trans  &trans &trans &trans &trans &trans &kp CHW_SHOT_FULL     &kp CHW_BSLS  &kp CHW_LCBR  &kp CHW_RCBR  &kp CHW_HASH  &trans &trans &trans
+        &trans &trans &trans        &trans &trans                &trans        &trans                      &trans        &trans &trans
+            >;
+        };
+
         extra1 {
             status = "reserved";
         };
         extra2 {
             status = "reserved";
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        win_lower {
+            if-layers = <WIN LOWER>;
+            then-layer = <LOWER_WIN>;
+        };
+        win_upper {
+            if-layers = <WIN UPPER>;
+            then-layer = <UPPER_WIN>;
         };
     };
 };
